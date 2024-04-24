@@ -7,6 +7,7 @@ import Map from './pages/Map/Map'
 import Search from './pages/Search/Search'
 import InfoAI from './pages/InfoAI/InfoAI'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import PruebaItems from './components/PruebaItems/PruebaItems'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,6 +17,7 @@ function App() {
       <div>
         <BrowserRouter>
           <Navbar />
+          <PruebaItems />
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/about" element={<About />} />
