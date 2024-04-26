@@ -1,9 +1,13 @@
 import React from 'react'
 import './Landing.css'
+import PruebaItems from '../../components/PruebaItems/PruebaItems';
+import Hero from '../../components/Hero/Hero';
 
 const Landing = () => {
   return (
-    <div className='rectangle'></div>
+    <div className='home'>
+      <Hero />
+    </div>
   )
 }
 

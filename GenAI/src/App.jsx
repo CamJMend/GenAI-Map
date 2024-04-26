@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import Navbar from './components/Navbar/Navbar'
 import About from './pages/About/About'
@@ -6,18 +5,18 @@ import Landing from './pages/Landing/Landing'
 import Map from './pages/Map/Map'
 import Search from './pages/Search/Search'
 import InfoAI from './pages/InfoAI/InfoAI'
+import Admin from './pages/Admin/Admin'
+import PrivateRoute from './components/PrivateRoute/PrivateRoute'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import PruebaItems from './components/PruebaItems/PruebaItems'
+import Login from './pages/Login/Login'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
       <div>
         <BrowserRouter>
           <Navbar />
-          <PruebaItems />
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/about" element={<About />} />
@@ -28,6 +27,8 @@ function App() {
             <Route path="/infoai" element={<InfoAI />}> 
               <Route path=":infoai:id" element={<InfoAI />} /> 
             </Route> 
+            <Route path="/login" element={<Login />} />
+            <Route path="/admin" element={<Admin />} />
           </Routes>
         </BrowserRouter>
       </div>
