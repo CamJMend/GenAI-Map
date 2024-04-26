@@ -1,3 +1,54 @@
-.rectangle{
-    
-} 
+.home{
+    height: 1000px;
+    position: relative;
+}
+
+#bgndImage {
+    position: absolute;
+    z-index: 0;
+    height: 800px;
+    width: 100%;
+}
+
+#imagenMap {
+    position: absolute; 
+    z-index: 1; 
+    height: 600px;
+    width: auto;
+    top: 100px;
+    left: 900px;
+}
+
+.landingTexts p{
+    position: absolute; 
+    z-index: 2;
+    color: #222529;
+}
+
+#A{
+    font-size: 220px;
+    font-weight: 800;
+    top: -150px;
+    left: 70px;
+}
+
+#UTOGEN{
+    font-size: 70px;
+    font-weight: 800;
+    top: 40px;
+    left: 205px;
+}
+
+#IMAP{
+    font-size: 70px;
+    font-weight: 800;
+    top: 130px;
+    left: 245px;
+}
+
+#sub{
+    font-size: 38px;
+    font-weight: 500;
+    top: 320px;
+    left: 80px;
+}

@@ -16,8 +16,7 @@ function About() {
                 <div className='about-inside-section'>
                     <h2>Title of section</h2>
                     <p>Text non temper quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate.Mauris accumsan eras sapien. Text non temper quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate.Mauris accumsan eras sapien. Text non temper quam, et lacinia sapien. Mauris accumsan eros 
-                        eget libero posuere vulputate.Mauris accumsan eras sapien. Text non temper quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate.Mauris accumsan eras sapien. Text non temper quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate.Mauris accumsan eras sapien. Text non temper quam, et lacinia sapien. Mauris accumsan eros 
-                        eget libero posuere vulputate.Mauris accumsan eras sapien.</p>
+                        eget libero posuere vulputate.Mauris accumsan eras sapien. Text non temper quam, et lacinia sapien. </p>
                 </div>
                 <div className="about-image">
                     <img src={aboutImage} alt="Network graphic" />

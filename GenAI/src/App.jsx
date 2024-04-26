@@ -4,6 +4,7 @@ import About from './pages/About/About'
 import Landing from './pages/Landing/Landing'
 import Map from './pages/Map/Map'
 import Search from './pages/Search/Search'
+import Footer from './components/Footer/Footer'
 import InfoAI from './pages/InfoAI/InfoAI'
 import Admin from './pages/Admin/Admin'
 import PrivateRoute from './components/PrivateRoute/PrivateRoute'
@@ -30,6 +31,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/admin" element={<Admin />} />
           </Routes>
+          <Footer />
         </BrowserRouter>
       </div>
     </>

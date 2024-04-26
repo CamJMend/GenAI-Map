@@ -1,9 +1,10 @@
 import React from 'react'
 import PieChart from '../../components/PieChart/PieChart'
+import './Map.css';
 
 const Map = () => {
   return (
-    <div>
+    <div className='mapPage'>
       <PieChart />
     </div>
   )

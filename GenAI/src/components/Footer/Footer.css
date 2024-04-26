@@ -1,0 +1,18 @@
+*{
+    font-size: 17px;
+    font-weight: 400;
+    color: #FAFAFA;
+}
+
+.footer {
+    width: auto;
+    height: 100px;
+    background-color: #222529;
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 70px;
+    padding-right: 70px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
