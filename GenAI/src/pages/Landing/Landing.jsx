@@ -2,6 +2,7 @@ import React from 'react'
 import './Landing.css'
 import bgndImage from '../../assets/images/top-home-rectagnle.png'
 import imagenMap from '../../assets/images/AI-Map.png'
+import { Link } from 'react-router-dom'
 //import PruebaItems from '../../components/PruebaItems/PruebaItems';
 //import Hero from '../../components/Hero/Hero';
 
@@ -10,7 +11,9 @@ const Landing = () => {
     <div className='home'>
       <div className='background-landing'>
         <img id='bgndImage' src={bgndImage} alt="Imagen de background" />
-        <img id='imagenMap' src={imagenMap} alt="Imagen de mapa" />
+        <Link to='/map'>
+          <img id='imagenMap' src={imagenMap} alt="Imagen de mapa" />
+        </Link>
       </div>
       <div className='landingTexts'>
         <p id='A'>A</p>
@@ -22,10 +25,12 @@ const Landing = () => {
       <div className='landing-cards'>
         <div id='left-column'>
           <div id='left-column-first'></div>
-          <div id='left-column-second'>
-            <h3>Search AI Tools</h3>
-            <p>Text non temper quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate.Mauris accumsan eras sapien.</p>
-          </div>
+          <Link to='/search'>
+            <div id='left-column-second'>
+              <h3>Search AI Tools</h3>
+              <p>Text non temper quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate.Mauris accumsan eras sapien.</p>
+            </div>
+          </Link>
           <div id='left-column-third'></div>
           <div id='left-column-fourth-back'>
             <div id='left-column-fourth'>
@@ -42,13 +47,15 @@ const Landing = () => {
               <div id="right-column-first-right-down"></div>
             </div>
           </div>
-          <div id="right-column-second">
-            <h3>Who are we?</h3>
-            <p>Text non temper quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate.Mauris accumsan eras sapien.
-               Text non temper quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate.Mauris accumsan eras sapien. 
-               Text non temper quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate.Mauris accumsan eras sapien. 
-               Text non temper quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate.Mauris accumsan eras sapien.</p>
-          </div>
+          <Link to='/about'>
+            <div id="right-column-second">
+              <h3>Who are we?</h3>
+              <p>Text non temper quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate.Mauris accumsan eras sapien.
+                Text non temper quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate.Mauris accumsan eras sapien. 
+                Text non temper quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate.Mauris accumsan eras sapien. 
+                Text non temper quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate.Mauris accumsan eras sapien.</p>
+            </div>
+          </Link>
           <div id="right-column-third">
             <div id="right-column-third-left-back">
               <div id="right-column-third-left"></div>
