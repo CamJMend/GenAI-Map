@@ -1,0 +1,20 @@
+select option {
+  color: black;
+  background: white;
+}
+.results-grid {
+  max-width: 80%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  row-gap: 50px;
+  padding: 20px;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+.search-results h2 {
+  font-size: 22px;
+  font-weight: 500;
+  margin-left: 70px;
+}

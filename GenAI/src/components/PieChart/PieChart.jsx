@@ -3,7 +3,7 @@ import * as am5 from "@amcharts/amcharts5";
 import * as am5percent from "@amcharts/amcharts5/percent";
 import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
 import "./PieChart.css";
-
+import Loading from "../Loading/Loading";
 function countCategories(data) {
   const categoryCount = {};
 
@@ -113,7 +113,7 @@ const PieChart = () => {
   }, [data]); // Dependency on data ensures chart re-initialization when data updates
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   return (
