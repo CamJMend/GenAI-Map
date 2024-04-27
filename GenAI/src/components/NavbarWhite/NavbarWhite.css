@@ -1,13 +1,13 @@
 *{
     font-size: 17px;
     font-weight: 400;
-    color: #FAFAFA;
+    color: #222529;
 }
 
 .navbar {
     width: auto;
     height: 100px;
-    background-color: #222529;
+    background-color: #FAFAFA;
     display: flex;
     align-items: center;
     padding-top: 20px;
@@ -43,6 +43,7 @@
     height: 2px;
     background-color: #FAFAFA;
 }
+
 
 
 

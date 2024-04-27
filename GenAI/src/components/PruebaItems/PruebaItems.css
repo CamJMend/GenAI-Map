@@ -1,0 +1,11 @@
+.item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.item > div {
+    flex-basis: calc(25% - 20px); 
+    margin: 20px; 
+}
+  
