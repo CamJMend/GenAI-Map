@@ -1,0 +1,89 @@
+.infoai{
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+}
+
+.information{
+    margin-left: 70px;
+}
+
+.return{
+    display: flex;
+    flex-direction: row;
+}
+
+.return img{
+    margin-top: 40px;
+    height: 40px;
+    width: auto;
+}
+
+.return h5{
+    color: #222529;
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 48px;
+    margin-left: 15px;
+}
+
+.logo-title{
+    margin-top: -30px;
+}
+
+.logo-title h1{
+    color: #222529;
+    font-size: 70px;
+    font-weight: 900;
+}
+
+.pricing-licensing{
+    margin-top: -30px;
+}
+
+.categories, .tasks, .pricing-licensing{
+    margin-bottom: 20px;
+}
+
+#categories-list,
+#tasks-list, #pricing-licensing-list {
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0;
+}
+
+#categories-list li,
+#tasks-list li, #pricing-licensing-list li{
+    display: inline-block;
+    margin-right: 18px;
+    color: #222529;
+    border: 1px solid #222529;
+    border-radius: 20px;
+    padding: 10px 15px; 
+}
+
+.description{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.description p{
+    color: #222529;
+    line-height: 1.5;
+    font-size: 22px;
+    font-weight: 300;
+}
+
+#visit-button{
+    width: 380px;
+    height: 60px;
+    border-radius: 50px;
+    color: #FAFAFA;
+    background-color: #222529;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+.image{
+    margin-top: 40px;
+}

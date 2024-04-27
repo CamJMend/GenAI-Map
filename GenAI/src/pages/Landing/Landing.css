@@ -84,6 +84,7 @@
     width: 430px;
     border-radius: 25px;
     margin-bottom: 40px;
+    align-content: center;
 }
 
 #left-column-third{
@@ -100,6 +101,7 @@
     width: 430px;
     border-radius: 25px;
     margin-bottom: 40px;
+    align-content: center;
 }
 
 #left-column-fourth-back{
@@ -167,6 +169,7 @@
     margin-bottom: 40px;
     margin-left: 35px;
     margin-right: 70px;
+    align-content: center;
 }
 
 #right-column-third-left{
@@ -203,15 +206,17 @@
     margin-left: 35px;
 }
 
-#left-column-second h3{
-    margin-left: 40px;
+#right-column-second h3, #left-column-second h3, #left-column-fourth h3{
+    padding-left: 40px;
+    padding-right: 40px;
     font-size: 32px;
     font-weight: 700;
     color:#222529;
 }
 
-#left-column-second p{
-    margin-left: 40px;
+#right-column-second p, #left-column-second p, #left-column-fourth p{
+    padding-left: 40px;
+    padding-right: 40px;
     font-size: 22px;
     font-weight: 400;
     color:#222529;
