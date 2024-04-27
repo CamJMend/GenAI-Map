@@ -19,6 +19,46 @@ const Landing = () => {
         <p id='IMAP'>I MAP</p>
         <p id='sub'>A new door to innovation ...</p>
       </div>
+      <div className='landing-cards'>
+        <div id='left-column'>
+          <div id='left-column-first'></div>
+          <div id='left-column-second'>
+            <h3>Search AI Tools</h3>
+            <p>Text non temper quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate.Mauris accumsan eras sapien.</p>
+          </div>
+          <div id='left-column-third'></div>
+          <div id='left-column-fourth-back'>
+            <div id='left-column-fourth'>
+              <h3>What is Gen AI?</h3>
+              <p>Text non temper quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate.Mauris accumsan eras sapien.</p>
+            </div>
+          </div>
+        </div>
+        <div id="right-column">
+          <div id="right-column-first">
+            <div id="right-column-first-left"></div>
+            <div id="right-column-first-right">
+              <div id="right-column-first-right-up"></div>
+              <div id="right-column-first-right-down"></div>
+            </div>
+          </div>
+          <div id="right-column-second">
+            <h3>Who are we?</h3>
+            <p>Text non temper quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate.Mauris accumsan eras sapien.
+               Text non temper quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate.Mauris accumsan eras sapien. 
+               Text non temper quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate.Mauris accumsan eras sapien. 
+               Text non temper quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate.Mauris accumsan eras sapien.</p>
+          </div>
+          <div id="right-column-third">
+            <div id="right-column-third-left-back">
+              <div id="right-column-third-left"></div>
+            </div>
+            <div id="right-column-third-right-back">
+              <div id="right-column-third-right"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
