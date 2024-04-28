@@ -1,0 +1,49 @@
+.tool-list-container {
+    max-height: 600px; /* Maximum height */
+    overflow-y: auto; /* Enables vertical scrolling */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+    padding: 20px;
+  }
+  
+  .tool-list-container h1 {
+    display: block;
+    text-align: center;
+    color: #ffffff;
+    font-size: 36px;
+    margin-bottom: 20px;
+
+  }
+  .tool-list {
+    list-style: none;
+    padding: 0;
+  }
+  .tool-list li {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  .tool-list li h2 {
+    color: #ffffff;
+    font-size: 24px;
+  }
+  .tool-list li p {
+    font-size: 16px;
+    color: #ffffff;
+    opacity: calc(0.7 + 0.3 * var(--opacity, 1));
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+  .tool-list li a {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #2a4563;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  .tool-list li a:hover {
+    background-color: #004494;
+  }

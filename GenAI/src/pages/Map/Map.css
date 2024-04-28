@@ -1,3 +1,15 @@
-.mapPage{
+.mapPage {
+    display: grid;
     background-color: #222529;
-}
+    grid-template-columns: 2fr 1fr; /* Equal width columns */
+    gap: 20px; /* Space between columns */
+    padding: 20px; /* Padding around the grid */
+  }
+  
+  /* Optional: Responsive adjustments */
+  @media (max-width: 768px) {
+    .mapPage {
+      grid-template-columns: 1fr; /* Stack vertically on smaller screens */
+    }
+  }
+  

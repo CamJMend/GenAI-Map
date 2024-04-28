@@ -6,8 +6,10 @@ import "./PieChart.css";
 import Loading from "../Loading/Loading";
 import mockData from '../../assets/data'; 
 
+
 function countCategories(data) {
   const categoryCount = {};
+
   // Iterate over each item in the array
   data.forEach((item) => {
     item.categories.forEach((category) => {
@@ -30,21 +32,30 @@ function countCategories(data) {
 
 const PieChart = () => {
   const chartRef = useRef(null);
-  const [isLoading, setIsLoading] = useState(true); // Initially, we set loading to true
+  const [data, setData] = useState(null); // State to hold API data
+  const [isLoading, setIsLoading] = useState(true); // State to manage loading indicator
 
-  // Convert mockData categories to format usable by the chart
+  // Fetch data from an API
   useEffect(() => {
-    // Simulate loading state change
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 500);
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:3001/ai-info");
+        const jsonData = await response.json();
+        setData(jsonData);
+        setIsLoading(false); // Set loading to false once data is fetched
+      } catch (error) {
+        console.error("Failed to fetch data:", error);
+        setIsLoading(false); // Ensure loading is disabled in case of error
+      }
+    };
+
+    fetchData();
   }, []);
 
   // Initialize and update chart
   useLayoutEffect(() => {
-    if (isLoading) return; // Do not initialize the chart if data is not yet available
-
-    const dataCategory = countCategories(mockData); // Using mockData directly
+    if (!data) return; // Do not initialize the chart if data is not yet available
+    const dataCategory = countCategories(data);
 
     let root = am5.Root.new(chartRef.current);
     root.setThemes([am5themes_Animated.new(root)]);
@@ -94,6 +105,7 @@ const PieChart = () => {
     );
 
     legend.data.setAll(series.dataItems);
+
     legend.labels.template.setAll({
       fill: am5.color(0xffffff),
     });
@@ -101,14 +113,18 @@ const PieChart = () => {
     return () => {
       root.dispose();
     };
-  }, [isLoading]); // Dependency on isLoading ensures chart re-initialization when loading state updates
+  }, [data]); // Dependency on data ensures chart re-initialization when data updates
 
   if (isLoading) {
     return <Loading />;
   }
 
   return (
-    <div id="chartdiv" ref={chartRef} style={{ width: "100%", height: "500px" }}></div>
+    <div
+      id="chartdiv"
+      ref={chartRef}
+      style={{ width: "100%", height: "500px" }}
+    ></div>
   );
 };
 
