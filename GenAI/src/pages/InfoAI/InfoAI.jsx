@@ -1,52 +1,120 @@
-import React from 'react'
-import './InfoAI.css'
-import toolImage from '../../assets/images/AiToolImage.png'; 
-import returnArrow from '../../assets/images/arrowReturn.png'; 
-import mockData from '../../assets/data'; 
+import "./InfoAI.css";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import toolImage from "../../assets/images/AiToolImage.png";
+import returnArrow from "../../assets/images/arrowReturn.png";
+import Loading from "../../components/Loading/Loading";
 
 const InfoAI = () => {
+  const { id } = useParams();
+  const [toolData, setToolData] = useState({
+    name: "",
+    pricingModel: "",
+    licensingType: "",
+    categories: [], // Initialize as empty arrays to ensure .map() can always run
+    tasks: [],
+    description: "",
+    shortDescription: "",
+    referenceURL: "",
+  });
+  const [showFullDescription, setShowFullDescription] = useState(false);
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchToolData = async () => {
+      try {
+        const response = await fetch(`http://localhost:3001/ai-info/${id}`);
+        const data = await response.json();
+        setToolData(data[0]); // Assume data is directly the tool object
+      } catch (error) {
+        console.error("Failed to fetch tool data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchToolData();
+  }, [id]);
+  const toggleDescription = () => {
+    setShowFullDescription(!showFullDescription);
+  };
+  if (loading) {
+    return <Loading />;
+  }
+
+  if (!toolData) {
+    return <p>No data found for tool with ID {id}</p>;
+  }
+  console.log();
   return (
-    <div className='infoai'>
+    <div className="infoai">
       <div className="information">
         <div className="return">
-          <img src={returnArrow} alt="Back arrow" />
-          <h5>Return</h5>
+          <img
+            src={returnArrow}
+            alt="Back arrow"
+            onClick={() => window.history.back()}
+          />
+          <h5>Return to search</h5>
         </div>
         <div className="logo-title">
-          <h1>Name of the tool</h1>
+          <h1>
+            {toolData.name} <img src={toolData.urlLogo} alt="" />
+          </h1>
         </div>
         <div className="pricing-licensing">
-          <ul id='pricing-licensing-list'>
-            <li>Free</li>
-            <li>Private</li>
+          <ul id="pricing-licensing-list">
+            <li
+              className={
+                toolData.pricingModel == "FREE"
+                  ? "free"
+                  : toolData.pricingModel == "PAID"
+                  ? "premium"
+                  : "freemium"
+              }
+            >
+              {toolData.pricingModel}
+            </li>
+            <li className="freemium">{toolData.licensingType}</li>
           </ul>
         </div>
         <div className="categories">
-          <ul id='categories-list'>
-            <li>Categoria 1</li>
-            <li>Categoria 2</li>
+          <ul id="categories-list">
+            {toolData.categories.map((cat, index) => (
+              <li key={index}>{cat}</li>
+            ))}
           </ul>
         </div>
         <div className="tasks">
-          <ul id='tasks-list'>
-            <li>Task 1</li>
-            <li>Task 2</li>
+          <ul id="tasks-list">
+            {toolData.tasks.map((task, index) => (
+              <li key={index}>{task}</li>
+            ))}
           </ul>
         </div>
         <div className="description">
-          <p>Text non temper quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate.Mauris accumsan eras sapien. 
-            Text non temper quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate.Mauris accumsan eras sapien. 
-            Text non temper quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate.Mauris accumsan eras sapien. 
-            Text non temper quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate.Mauris accumsan eras sapien. 
-            Text non temper quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate.Mauris accumsan eras sapien.</p>
+          <p>{toolData.shortDescription}</p>
         </div>
-        <button id='visit-button'>Visit tool website</button>
+
+        <div className="description">
+          <p>{showFullDescription ? toolData.description : ""}</p>
+          <button onClick={toggleDescription}>
+            {showFullDescription ? "Show Less " : "Show More"}
+          </button>
+        </div>
+        <button
+          id="visit-button"
+          onClick={() => (window.location.href = toolData.referenceURL)}
+        >
+          Visit tool website
+        </button>
       </div>
       <div className="image">
-        <img src={toolImage} alt="Imagen de vectores formando una cara" />
+        <img src={toolImage} alt="Tool Representation" />
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default InfoAI;

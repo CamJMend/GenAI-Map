@@ -38,6 +38,8 @@ const PruebaItems = () => {
               urlLogo={item.urlLogo}
               name={item.name}
               description={item.shortDescription}
+              url={item.referenceURL}
+              id={item.id}
             />
           ))
         )}
