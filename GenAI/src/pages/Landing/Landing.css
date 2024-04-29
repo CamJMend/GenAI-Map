@@ -13,14 +13,18 @@
 }
 
 #imagenMap {
+  transition: 0.5s;
   position: absolute;
   z-index: 3;
   height: 600px;
   width: auto;
   top: 100px;
-  left: 1000px;
+  right: 0px;
 }
-
+#imagenMap:hover {
+  transition: 0.5s;
+  filter: saturate(2);
+}
 .landingTexts p {
   position: absolute;
   z-index: 4;

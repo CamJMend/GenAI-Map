@@ -8,10 +8,10 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-section about">
           <h1 className="logo-text">
-            <span>Wizeland</span> Inc.
+            <span>Wizeline</span> Inc.
           </h1>
           <p>
-            Wizeland Inc. is a leading provider of AI technologies, dedicated to
+            Wizeline Inc. is a leading provider of AI technologies, dedicated to
             innovating how people interact with software & AI systems.
           </p>
           <div className="contact">
@@ -19,7 +19,7 @@ const Footer = () => {
               <i className="fas fa-phone"></i> &nbsp; 123-456-7890
             </span>
             <span>
-              <i className="fas fa-envelope"></i> &nbsp; info@wizeland.com
+              <i className="fas fa-envelope"></i> &nbsp; info@Wizeline.com
             </span>
           </div>
           <div className="socials">
@@ -64,7 +64,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-bottom">
-        &copy; wizeland.com | Designed by Tec de Monterrey Team
+        &copy; Wizeline.com | Designed by Tec de Monterrey Team
       </div>
     </div>
   );

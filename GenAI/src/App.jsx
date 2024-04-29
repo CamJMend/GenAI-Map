@@ -13,18 +13,20 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <BrowserRouter>
-      <div>
+      <div className="main">
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/map" element={<Map />} />
-          <Route path="/search" element={<Search />} />
-          <Route path="/infoai/:id" element={<InfoAI />} />
-          <Route path="/infoai" element={<InfoAI />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/admin" element={<Admin />} />
-        </Routes>
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/map" element={<Map />} />
+            <Route path="/search" element={<Search />} />
+            <Route path="/infoai/:id" element={<InfoAI />} />
+            <Route path="/infoai" element={<InfoAI />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/admin" element={<Admin />} />
+          </Routes>
+        </div>
         <Footer />
       </div>
     </BrowserRouter>

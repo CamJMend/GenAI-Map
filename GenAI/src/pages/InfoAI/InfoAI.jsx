@@ -1,5 +1,5 @@
 import "./InfoAI.css";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import toolImage from "../../assets/images/AiToolImage.png";
 import returnArrow from "../../assets/images/arrowReturn.png";
@@ -27,6 +27,7 @@ const InfoAI = () => {
         const response = await fetch(`http://localhost:3001/ai-info/${id}`);
         const data = await response.json();
         setToolData(data[0]); // Assume data is directly the tool object
+        console.log("Tool data fetched:", data[0]);
       } catch (error) {
         console.error("Failed to fetch tool data:", error);
       } finally {
@@ -98,7 +99,13 @@ const InfoAI = () => {
         </div>
 
         <div className="description">
-          <p>{showFullDescription ? toolData.description : ""}</p>
+          <p
+            dangerouslySetInnerHTML={{
+              __html: showFullDescription
+                ? toolData.description.replaceAll("\n", "<br>")
+                : "",
+            }}
+          />
           <button onClick={toggleDescription}>
             {showFullDescription ? "Show Less " : "Show More"}
           </button>

@@ -68,8 +68,24 @@
   flex-wrap: wrap;
 }
 
+.search-results {
+  width: 100%;
+}
 .search-results h2 {
   font-size: 22px;
   font-weight: 500;
   margin-left: 70px;
+}
+
+.search-body {
+  display: flex;
+  align-items: center;
+  min-height: 300px;
+}
+
+.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
+  top: -30px !important;
+}
+.MuiTouchRipple-root {
+  display: none !important;
 }

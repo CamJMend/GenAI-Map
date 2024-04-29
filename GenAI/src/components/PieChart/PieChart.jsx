@@ -4,7 +4,7 @@ import * as am5percent from "@amcharts/amcharts5/percent";
 import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
 import "./PieChart.css";
 import Loading from "../Loading/Loading";
-import mockData from '../../assets/data'; 
+import mockData from "../../assets/data";
 
 function countCategories(data) {
   const categoryCount = {};
@@ -80,9 +80,11 @@ const PieChart = () => {
       centerY: am5.percent(50),
       fontSize: 20,
       fill: am5.color(0xffffff),
-      opacity: 0.75,
+      opacity: 0.85,
     });
-
+    series.ticks.template.setAll({
+      stroke: am5.color(0xffffff), // Dark gray color
+    });
     let legend = chart.children.push(
       am5.Legend.new(root, {
         centerX: am5.percent(50),
@@ -97,6 +99,11 @@ const PieChart = () => {
     legend.labels.template.setAll({
       fill: am5.color(0xffffff),
     });
+    legend.valueLabels.template.setAll({
+      fill: am5.color(0xffffff),
+    });
+
+    // legend.valueLabels.template.set("forceHidden", true);
 
     return () => {
       root.dispose();
@@ -108,7 +115,11 @@ const PieChart = () => {
   }
 
   return (
-    <div id="chartdiv" ref={chartRef} style={{ width: "100%", height: "500px" }}></div>
+    <div
+      id="chartdiv"
+      ref={chartRef}
+      style={{ width: "100%", height: "500px" }}
+    ></div>
   );
 };
 

@@ -1,10 +1,33 @@
 // src/components/Search/Search.js
-import React from "react";
+
 import "./Search.css"; // Asegúrate de crear un archivo Search.css en la misma carpeta
 import PruebaItems from "../../components/PruebaItems/PruebaItems";
 import Dropdown from "../../components/DropDown/Dropdown";
+import { useState, useEffect } from "react";
+import Loading from "../../components/Loading/Loading";
+
+const fetchItems = async () => {
+  try {
+    const response = await fetch("http://localhost:3001/ai-info");
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Failed to fetch items:", error);
+    return [];
+  }
+};
 
 function Search() {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchItems().then((data) => {
+      setData(data);
+      setLoading(false);
+    });
+  }, []);
+
   return (
     <div className="search-container">
       <header className="search-header">
@@ -23,7 +46,7 @@ function Search() {
       </header>
       <div className="search-body">
         <section className="search-results">
-          <PruebaItems />
+          {loading ? <Loading /> : <PruebaItems data={data} />}
         </section>
       </div>
     </div>
