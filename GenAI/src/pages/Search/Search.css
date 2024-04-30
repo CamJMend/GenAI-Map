@@ -70,6 +70,7 @@
 
 .search-results {
   width: 100%;
+  min-height: 60vh;
 }
 .search-results h2 {
   font-size: 22px;
