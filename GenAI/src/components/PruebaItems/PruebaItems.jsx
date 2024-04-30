@@ -41,7 +41,10 @@ const PruebaItems = ({ data }) => {
   }, [data, state.task, state.category, state.sortBy]);
   return (
     <>
-      <h2>--&gt; {filteredData.length} Results found</h2>
+      <h2>
+        <i className="fa-solid fa-magnifying-glass"></i> {filteredData.length}{" "}
+        Results found
+      </h2>
       <div className="results-grid">
         {filteredData.map((item) => (
           <Card

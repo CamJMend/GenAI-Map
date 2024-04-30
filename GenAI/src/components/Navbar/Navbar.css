@@ -27,6 +27,9 @@
   margin-left: auto;
   list-style-type: none;
 }
+.nav-menu.white li.active::after {
+  background-color: #222529;
+}
 
 .white {
   background-color: #fafafa;

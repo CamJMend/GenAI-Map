@@ -30,7 +30,9 @@ function Search() {
       <header className="search-header">
         <h1>Search</h1>
         <input type="text" className="search-input" placeholder="Search..." />
-        <button className="search-button">&gt;</button>
+        <button className="search-button">
+          <i className="fa-solid fa-magnifying-glass"></i>
+        </button>
 
         <Dropdown />
       </header>

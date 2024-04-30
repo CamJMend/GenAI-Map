@@ -8,75 +8,49 @@ import image_logo_white from "../../assets/images/main_logo_black.png";
 const Navbar = () => {
   const { state, updateState } = useContext(GlobalContext);
   const [menu, setMenu] = useState("home");
-  const location = useLocation(); // Getting the current location
+  const location = useLocation();
 
   useEffect(() => {
+    // Scroll to the top of the window on mount
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    const path = location.pathname;
     // Determine the menu based on the pathname
-    const path = location.pathname; // '/home', '/map', '/search', '/about'
     if (path.includes("/map")) {
-      updateState("theme", "light");
       setMenu("map");
     } else if (path.includes("/search")) {
-      updateState("theme", "dark");
       setMenu("search");
     } else if (path.includes("/about")) {
-      updateState("theme", "dark");
       setMenu("about");
     } else {
-      updateState("theme", "dark");
       setMenu("home"); // Default to home
     }
-  }, [location]); // Re-run this effect if the location changes
+    const theme = menu === "map" ? "light" : "dark";
+    updateState("theme", theme);
+  }, [location]);
 
   return (
-    <div className={`navbar ${state.theme == "light" ? "white" : ""}`}>
+    <div className={`navbar ${state.theme === "light" ? "white" : ""}`}>
       <div className="navbar-image">
         <img
-          src={state.theme == "light" ? image_logo_white : image_logo}
-          alt="Logo de Wizeline negativo"
+          src={state.theme === "light" ? image_logo_white : image_logo}
+          alt="Logo"
         />
       </div>
-      <ul className={`nav-menu ${state.theme == "light" ? "white" : ""}`}>
-        <li
-          onClick={() => {
-            setMenu("home");
-          }}
-        >
-          <Link style={{ textDecoration: "none" }} to="/">
-            Home
-          </Link>{" "}
-          {menu === "home" ? <hr /> : <></>}
-        </li>
-        <li
-          onClick={() => {
-            setMenu("map");
-          }}
-        >
-          <Link style={{ textDecoration: "none" }} to="/map">
-            Map
-          </Link>
-          {menu === "map" ? <hr /> : <></>}
-        </li>
-        <li
-          onClick={() => {
-            setMenu("search");
-          }}
-        >
-          <Link style={{ textDecoration: "none" }} to="/search">
-            Search
-          </Link>{" "}
-          {menu === "search" ? <hr /> : <></>}
-        </li>
-        <li
-          onClick={() => {
-            setMenu("about");
-          }}
-        >
-          <Link style={{ textDecoration: "none" }} to="/about">
-            About
-          </Link>{" "}
-          {menu === "about" ? <hr /> : <></>}
-        </li>
+      <ul className={`nav-menu ${state.theme === "light" ? "white" : ""}`}>
+        {["home", "map", "search", "about"].map((item) => (
+          <li key={item} onClick={() => setMenu(item)}>
+            <Link
+              to={`/${item === "home" ? "" : item}`}
+              className={menu === item ? "active" : ""}
+            >
+              {item.charAt(0).toUpperCase() + item.slice(1)}
+            </Link>
+            {menu === item && <hr />}
+          </li>
+        ))}
       </ul>
     </div>
   );

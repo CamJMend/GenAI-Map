@@ -27,19 +27,39 @@ const Landing = () => {
           <img id="imagenMap" src={imagenMap} alt="Imagen de mapa" />
         </Link>
       </div>
+      <div className="landingTexts">
+        <p id="A">A</p>
+        <p id="UTOGEN">UTO GEN</p>
+        <p id="IMAP">I MAP</p>
+        <p id="sub">A new door to innovation...</p>
+      </div>
       {loading ? (
         <Loading />
       ) : (
         <>
-          <div className="landingTexts">
-            <p id="A">A</p>
-            <p id="UTOGEN">UTO GEN</p>
-            <p id="IMAP">I MAP</p>
-            <p id="sub">A new door to innovation...</p>
-          </div>
           <div className="landing-cards">
             <div id="left-column">
-              <div id="left-column-first"></div>
+              <div
+                id="left-column-first"
+                style={{
+                  display: "flex",
+                  justifyContent: "space-around",
+                  alignItems: "center",
+                  flexDirection: "column",
+                }}
+              >
+                <Link
+                  style={{ textDecoration: "none" }}
+                  to={`/infoai/${data[index] ? data[index].id : ""}`}
+                >
+                  <img
+                    style={{ width: "150px", height: "150px" }}
+                    src={data[index] ? data[index].urlLogo : ""}
+                    alt=""
+                  />
+                  {index++}
+                </Link>
+              </div>
               <Link to="/search">
                 <div id="left-column-second">
                   <h3>Search AI Tools</h3>
@@ -47,7 +67,7 @@ const Landing = () => {
                     The search bar component is a key feature of the web
                     application, implementing this in the prototyping phase of
                     the project allows for unit testing on the database response
-                    times and query efficiency as well as user input processing,
+                    times and query efficiency.
                   </p>
                 </div>
               </Link>
@@ -119,11 +139,27 @@ const Landing = () => {
                   </Link>
                 </div>
                 <div id="right-column-first-right">
-                  <div id="right-column-first-right-up">
-                    <img
-                      src="https://s2.googleusercontent.com/s2/favicons?sz=64&domain_url=https://chat.openai.com/"
-                      alt=""
-                    />
+                  <div
+                    id="right-column-first-right-up"
+                    style={{
+                      display: "flex",
+                      justifyContent: "flex-end",
+                      alignItems: "center",
+                      flexDirection: "column",
+                    }}
+                  >
+                    {" "}
+                    <Link
+                      style={{ textDecoration: "none", marginBottom: "80px" }}
+                      to={`/infoai/${data[index] ? data[index].id : ""}`}
+                    >
+                      <img
+                        style={{ width: "150px", height: "150px" }}
+                        src={data[index] ? data[index].urlLogo : ""}
+                        alt=""
+                      />
+                      {index++}
+                    </Link>
                   </div>
                   <div
                     id="right-column-first-right-down"
@@ -133,7 +169,6 @@ const Landing = () => {
                       alignItems: "center",
                     }}
                   >
-                    {" "}
                     <Link
                       style={{ textDecoration: "none" }}
                       to={`/infoai/${data[index] ? data[index].id : ""}`}
