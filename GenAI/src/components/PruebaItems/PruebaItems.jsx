@@ -14,16 +14,31 @@ const filterData = (data, task, category) => {
         item.categories.includes(category))
   );
 };
-
+const sortData = (data, sortBy) => {
+  if (sortBy === "") return data;
+  return data.sort((a, b) => {
+    const aN = a.name.toLowerCase();
+    const bN = b.name.toLowerCase();
+    if (aN < bN) {
+      if (sortBy === "A-Z") return 1;
+      return -1;
+    }
+    if (aN > bN) {
+      if (sortBy === "A-Z") return -1;
+      return 1;
+    }
+    return 0;
+  });
+};
+// eslint-disable-next-line react/prop-types
 const PruebaItems = ({ data }) => {
   const [filteredData, setFilteredData] = useState(data);
   const { state } = useContext(GlobalContext);
 
   useEffect(() => {
     const filteredData = filterData(data, state.task, state.category);
-      console.log(filteredData);
-    setFilteredData(filteredData);
-  }, [data, state.task, state.category]);
+    setFilteredData(sortData(filteredData, state.sortBy));
+  }, [data, state.task, state.category, state.sortBy]);
   return (
     <>
       <h2>--&gt; {filteredData.length} Results found</h2>

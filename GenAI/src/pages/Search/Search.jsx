@@ -6,16 +6,7 @@ import Dropdown from "../../components/DropDown/Dropdown";
 import { useState, useEffect, useContext } from "react";
 import Loading from "../../components/Loading/Loading";
 import { GlobalContext } from "../../GlobalContext/GlobalContext";
-const fetchItems = async () => {
-  try {
-    const response = await fetch("http://localhost:3001/ai-info");
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error("Failed to fetch items:", error);
-    return [];
-  }
-};
+import fetchItems from "../../components/fetchAndCache/fetchAndCache";
 
 function Search() {
   const [data, setData] = useState([]);
@@ -27,6 +18,10 @@ function Search() {
       console.log(data);
       setData(data);
       setLoading(false);
+      updateState("query", "");
+      updateState("sortBy", "");
+      updateState("category", "");
+      updateState("task", "");
     });
   }, []);
 
@@ -36,14 +31,7 @@ function Search() {
         <h1>Search</h1>
         <input type="text" className="search-input" placeholder="Search..." />
         <button className="search-button">&gt;</button>
-        <select className="search-sort">
-          <option disabled selected value="">
-            Sort by
-          </option>
-          <option value="sortby">Date</option>
-          <option value="sortby">A-Z</option>
-          <option value="sortby">Z-A</option>
-        </select>
+
         <Dropdown />
       </header>
       <div className="search-body">
