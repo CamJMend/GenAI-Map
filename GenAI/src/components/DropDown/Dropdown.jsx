@@ -1,11 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import "./Dropdown.css";
+import { GlobalContext } from "../../GlobalContext/GlobalContext";
 
 const Dropdown = () => {
   const [categories, setCategories] = useState([]);
   const [tasks, setTasks] = useState([]);
   const [loadingCategories, setLoadingCategories] = useState(true);
   const [loadingTasks, setLoadingTasks] = useState(true);
+  const { state, updateState } = useContext(GlobalContext);
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -35,10 +37,21 @@ const Dropdown = () => {
     fetchCategories();
     fetchTasks();
   }, []);
+  const updateTask = (e) => {
+    updateState("task", e.target.value);
+  };
+
+  const updateCategory = (e) => {
+    updateState("category", e.target.value);
+  };
 
   return (
     <div className="search-dropdown">
-      <select className="category-dropdown" defaultValue="">
+      <select
+        className="category-dropdown"
+        defaultValue="all"
+        onChange={(e) => updateCategory(e)}
+      >
         <option disabled value="">
           Categories
         </option>
@@ -53,13 +66,17 @@ const Dropdown = () => {
           ))
         )}
       </select>
-      <select className="task-dropdown" defaultValue="">
+      <select
+        className="task-dropdown"
+        defaultValue=""
+        onChange={(e) => updateTask(e)}
+      >
         <option disabled value="">
           Tasks
         </option>
         <option value="all">All Tasks</option>
         {loadingTasks ? (
-          <option>Loading tasks...</option>
+          <option disabled>Loading tasks...</option>
         ) : (
           tasks.map((task) => (
             <option key={task.id} value={task.name}>
