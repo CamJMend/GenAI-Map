@@ -1,6 +1,6 @@
 import "./AddAiTool.css";
 import React, { useState, useEffect } from "react";
-
+import Sidebar from "../../components/Sidebar/Sidebar";
 const CreateAITechnology = () => {
   const [name, setName] = useState("");
   const [referenceURL, setReferenceURL] = useState("");
@@ -95,118 +95,123 @@ const CreateAITechnology = () => {
 
   return (
     <>
-      <div className="form-container">
-        <h1 style={{ color: "black", fontSize: "30px" }}>Add an AI</h1>
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label>Name</label>
-            <input
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder="Name"
-            />
-          </div>
-          <div className="form-group">
-            <label>Reference URL</label>
-            <input
-              type="url"
-              value={referenceURL}
-              onChange={(e) => setReferenceURL(e.target.value)}
-              placeholder="Reference URL"
-            />
-          </div>
-          <div className="form-group">
-            <label>Pricing Model</label>
-            <select
-              value={pricingModel}
-              onChange={(e) => setPricingModel(e.target.value)}
-            >
-              <option value="FREE">FREE</option>
-              <option value="FREEMIUM">FREEMIUM</option>
-              <option value="PAID">PAID</option>
-            </select>
-          </div>
-          <div className="form-group">
-            <label>Licensing Type</label>
-            <input
-              type="text"
-              value={licensingType}
-              onChange={(e) => setLicensingType(e.target.value)}
-              placeholder="Licensing Type"
-            />
-          </div>
-          <div className="form-group">
-            <label>Description</label>
-            <textarea
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-              placeholder="Description"
-            ></textarea>
-          </div>
-          <div className="form-group">
-            <label>Short Description</label>
-            <input
-              type="text"
-              value={shortDescription}
-              onChange={(e) => setShortDescription(e.target.value)}
-              placeholder="Short Description"
-            />
-          </div>
-          <div className="form-group">
-            <label>URL Logo</label>
-            <input
-              type="url"
-              value={urlLogo}
-              onChange={(e) => setUrlLogo(e.target.value)}
-              placeholder="URL Logo"
-            />
-          </div>
-          <div className="form-group">
-            <label>Categories</label>
-            <select
-              value={currentCategory}
-              onChange={(e) => setCurrentCategory(e.target.value)}
-            >
-              <option value="">Select a category</option>
-              {allCategories.map((category) => (
-                <option key={category.id} value={category.value}>
-                  {category.value}
-                </option>
+      <div className="sidebar-content" style={{ display: "flex" }}>
+        <Sidebar />
+        <div className="form-container">
+          <h1 style={{ color: "black", fontSize: "30px" }}>Add an AI</h1>
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label>Name</label>
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Name"
+              />
+            </div>
+            <div className="form-group">
+              <label>Reference URL</label>
+              <input
+                type="url"
+                value={referenceURL}
+                onChange={(e) => setReferenceURL(e.target.value)}
+                placeholder="Reference URL"
+              />
+            </div>
+            <div className="form-group">
+              <label>Pricing Model</label>
+              <select
+                value={pricingModel}
+                onChange={(e) => setPricingModel(e.target.value)}
+              >
+                <option value="FREE">FREE</option>
+                <option value="FREEMIUM">FREEMIUM</option>
+                <option value="PAID">PAID</option>
+              </select>
+            </div>
+            <div className="form-group">
+              <label>Licensing Type</label>
+              <input
+                type="text"
+                value={licensingType}
+                onChange={(e) => setLicensingType(e.target.value)}
+                placeholder="Licensing Type"
+              />
+            </div>
+            <div className="form-group">
+              <label>Description</label>
+              <textarea
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                placeholder="Description"
+              ></textarea>
+            </div>
+            <div className="form-group">
+              <label>Short Description</label>
+              <input
+                type="text"
+                value={shortDescription}
+                onChange={(e) => setShortDescription(e.target.value)}
+                placeholder="Short Description"
+              />
+            </div>
+            <div className="form-group">
+              <label>URL Logo</label>
+              <input
+                type="url"
+                value={urlLogo}
+                onChange={(e) => setUrlLogo(e.target.value)}
+                placeholder="URL Logo"
+              />
+            </div>
+            <div className="form-group">
+              <label>Categories</label>
+              <select
+                value={currentCategory}
+                onChange={(e) => setCurrentCategory(e.target.value)}
+              >
+                <option value="">Select a category</option>
+                {allCategories.map((category) => (
+                  <option key={category.id} value={category.value}>
+                    {category.value}
+                  </option>
+                ))}
+              </select>
+              <button type="button" onClick={handleAddCategory}>
+                Add Category
+              </button>
+            </div>
+            <div className="form-group">
+              {categories.map((cat) => (
+                <span key={cat}>{cat} </span>
               ))}
-            </select>
-            <button type="button" onClick={handleAddCategory}>
-              Add Category
-            </button>
-          </div>
-          <div className="form-group">
-            {categories.map((cat) => (
-              <span key={cat}>{cat} </span>
-            ))}
-          </div>
-          <div className="form-group">
-            <label>AI Tasks</label>
-            <input
-              type="text"
-              value={currentTask}
-              onKeyDown={(e) => e.key === "Enter" && handleAddTask()}
-              placeholder="Enter a task"
-              onChange={(e) => setCurrentTask(e.target.value)}
-            />
-            <button type="button" onClick={handleAddTask}>
-              Add Task
-            </button>
-          </div>
-          <div className="form-group">
-            {aiTasks.map((task) => (
-              <span key={task}>{task} </span>
-            ))}
-          </div>
-          <div className="form-group">
-            <button type="submit">Create AI Technology</button>
-          </div>
-          {error && <p className="error">{error}</p>}
-        </form>
+            </div>
+            <div className="form-group">
+              <label>AI Tasks</label>
+              <input
+                type="text"
+                value={currentTask}
+                onKeyDown={(e) => e.key === "Enter" && handleAddTask()}
+                placeholder="Enter a task"
+                onChange={(e) => setCurrentTask(e.target.value)}
+              />
+              <button type="button" onClick={handleAddTask}>
+                Add Task
+              </button>
+            </div>
+            <div className="form-group">
+              {aiTasks.map((task) => (
+                <span key={task}>{task} </span>
+              ))}
+            </div>
+            <div className="form-group">
+              <button className="primary " type="submit">
+                Create AI Technology
+              </button>
+            </div>
+            {error && <p className="error">{error}</p>}
+          </form>
+        </div>
       </div>
     </>
   );

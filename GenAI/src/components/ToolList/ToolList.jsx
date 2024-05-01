@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import Pagination from '../Pagination/Pagination'; // Asegúrate de que el path al componente de Pagination es correcto
-import './ToolList.css';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import Pagination from "../Pagination/Pagination"; // Asegúrate de que el path al componente de Pagination es correcto
+import "./ToolList.css";
 
 const ToolList = () => {
   const [tools, setTools] = useState([]);
@@ -12,7 +12,9 @@ const ToolList = () => {
   useEffect(() => {
     const fetchTools = async () => {
       try {
-        const response = await fetch("http://localhost:3001/ai-info/trending/true");
+        const response = await fetch(
+          "http://localhost:3001/ai-info/trending/true"
+        );
         const data = await response.json();
         setTools(data);
         setIsLoading(false);
@@ -44,13 +46,22 @@ const ToolList = () => {
       <ul className="tool-list">
         {currentItems.map((tool) => (
           <li key={tool.id}>
-            <h2>{tool.ranking}. {tool.name}</h2>
+            <h2>
+              {tool.ranking}. {tool.name}
+            </h2>
             <p>Categories: {tool.categories.join(", ")}</p>
             <p>{tool.shortDescription}</p>
-            <Link to={`/infoai/${tool.id}`} style={{ textDecoration: 'none' }}>
+            <Link
+              to={`/infoai/${tool.id}`}
+              style={{ textDecoration: "none", marginRight: "20px" }}
+            >
               See detailed info
             </Link>
-            <a href={tool.referenceURL} target="_blank" rel="noopener noreferrer">
+            <a
+              href={tool.referenceURL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Visit Website
             </a>
           </li>
@@ -67,6 +78,3 @@ const ToolList = () => {
 };
 
 export default ToolList;
-
-
-

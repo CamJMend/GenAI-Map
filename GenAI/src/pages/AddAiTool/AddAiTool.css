@@ -1,7 +1,7 @@
 .form-container {
-  max-width: 600px;
+  min-width: 600px;
   margin: 20px auto;
-  padding: 20px;
+  padding: 30px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   background: white;
@@ -21,7 +21,7 @@
 .form-group button,
 .form-group span {
   color: black;
-  width: 100%;
+  width: 95%;
   padding: 8px;
   margin-top: 5px;
   border-radius: 4px;
@@ -41,4 +41,11 @@
 .error {
   color: red;
   font-size: 0.875em;
+}
+
+.form-group .primary {
+  background-color: green;
+}
+.form-group .primary:hover {
+  background-color: rgba(0, 128, 0, 0.644);
 }
