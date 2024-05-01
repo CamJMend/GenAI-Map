@@ -8,7 +8,15 @@ const Card = (props) => {
   return (
     <div className="card">
       <div className="bgnd-image">
-        <img src={props.urlLogo} alt="" />
+        <img
+          src={props.urlLogo}
+          alt=""
+          onError={(e) => {
+            e.target.onerror = null;
+            e.target.src =
+              "https://img.freepik.com/foto-gratis/vista-robot-grafico-3d_23-2150849173.jpg";
+          }}
+        />
       </div>
       <h3>{props.name}</h3>
       <p>{props.description}</p>

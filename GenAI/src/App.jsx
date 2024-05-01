@@ -6,8 +6,10 @@ import Map from "./pages/Map/Map";
 import Search from "./pages/Search/Search";
 import InfoAI from "./pages/InfoAI/InfoAI";
 import Admin from "./pages/Admin/Admin";
-import Login from "./pages/Login/Login";
 import Footer from "./components/Footer/Footer";
+import GitHubAi from "./pages/GitHubAI/GitHubAI";
+import InfoGitHub from "./pages/InfoGitHub/InfoGitHub";
+import CreateAITechnology from "./pages/AddAiTool/AddAiTool";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -24,6 +26,9 @@ function App() {
             <Route path="/infoai/:id" element={<InfoAI />} />
             <Route path="/infoai" element={<InfoAI />} />
             <Route path="/admin" element={<Admin />} />
+            <Route path="/githubai" element={<GitHubAi />} />
+            <Route path="/infogithub/:repo/:owner" element={<InfoGitHub />} />
+            <Route path="/addaitool" element={<CreateAITechnology />} />
           </Routes>
         </div>
         <Footer />

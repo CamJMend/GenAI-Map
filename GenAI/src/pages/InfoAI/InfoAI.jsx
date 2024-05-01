@@ -62,7 +62,12 @@ const InfoAI = () => {
         </div>
         <div className="logo-title">
           <h1>
-            {toolData.name} <img src={toolData.urlLogo} alt="" />
+            {toolData.name}{" "}
+            <img
+              style={{ maxWidth: "100px", height: "auto" }}
+              src={toolData.urlLogo}
+              alt=""
+            />
           </h1>
         </div>
         <div className="pricing-licensing">
