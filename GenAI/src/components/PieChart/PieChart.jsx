@@ -28,7 +28,7 @@ const PieChart = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:3001/ai-info"); // Adjust the URL to your API
+        const response = await fetch("http://localhost:3001/ai-info/trending/true"); // Adjust the URL to your API
         const jsonData = await response.json();
         setData(jsonData);
         setIsLoading(false);
