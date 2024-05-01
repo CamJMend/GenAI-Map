@@ -9,6 +9,7 @@ import Admin from "./pages/Admin/Admin";
 import Footer from "./components/Footer/Footer";
 import GitHubAi from "./pages/GitHubAI/GitHubAI";
 import InfoGitHub from "./pages/InfoGitHub/InfoGitHub";
+import CreateAITechnology from "./pages/AddAiTool/AddAiTool";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
             <Route path="/admin" element={<Admin />} />
             <Route path="/githubai" element={<GitHubAi />} />
             <Route path="/infogithub/:repo/:owner" element={<InfoGitHub />} />
+            <Route path="/addaitool" element={<CreateAITechnology />} />
           </Routes>
         </div>
         <Footer />
