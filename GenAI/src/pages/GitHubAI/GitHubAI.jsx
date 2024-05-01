@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import GitCard from "../../components/GitCard/GitCard";
 import Loading from "../../components/Loading/Loading";
-import Pagination from "../../components/Pagination/Pagination";
+import Pagination from "../../components/Pagination2/Pagination";
 import "./GitHubAI.css"; // Make sure to import the CSS file
 
 const GitHubAi = () => {
