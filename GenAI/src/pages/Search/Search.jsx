@@ -1,7 +1,7 @@
 import "./Search.css"; // Make sure to create a Search.css file in the same folder
 import PruebaItems from "../../components/PruebaItems/PruebaItems";
 import Dropdown from "../../components/DropDown/Dropdown";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import Loading from "../../components/Loading/Loading";
 import fetchItems from "../../components/fetchAndCache/fetchAndCache";
 

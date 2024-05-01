@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import toolImage from "../../assets/images/AiToolImage.png";
 import returnArrow from "../../assets/images/arrowReturn.png";
 import Loading from "../../components/Loading/Loading";
+import { FAQ } from "../../components/FAQ/faq";
 
 const InfoAI = () => {
   const { id } = useParams();
@@ -114,6 +115,10 @@ const InfoAI = () => {
             ""
           )}
         </div>
+        {toolData.questions.length > 0 ? <h2 className="FAQ-h2">FAQ</h2> : null}
+        {toolData.questions.map((faq, index) => (
+          <FAQ faq={faq} key={index} />
+        ))}
         <button
           id="visit-button"
           onClick={() => (window.location.href = toolData.referenceURL)}
@@ -122,7 +127,7 @@ const InfoAI = () => {
         </button>
         <h2 className="rel-searches-h2">Search on the web:</h2>
         <ul className="rel-searches-ul">
-          {toolData.searches.map((search, index) => (
+          {toolData.searches.map((search) => (
             <li key={search.id} className="rel-searches-li">
               <i
                 className="fa-solid fa-magnifying-glass"
