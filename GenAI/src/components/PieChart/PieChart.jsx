@@ -1,50 +1,49 @@
-import { useState, useEffect, useLayoutEffect, useRef } from "react";
+import React, { useState, useEffect, useLayoutEffect, useRef } from "react";
 import * as am5 from "@amcharts/amcharts5";
 import * as am5percent from "@amcharts/amcharts5/percent";
 import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
 import "./PieChart.css";
 import Loading from "../Loading/Loading";
-import mockData from "../../assets/data";
 
+// Helper function to count categories from data
 function countCategories(data) {
   const categoryCount = {};
-  // Iterate over each item in the array
   data.forEach((item) => {
     item.categories.forEach((category) => {
-      if (categoryCount[category]) {
-        categoryCount[category] += 1;
-      } else {
-        categoryCount[category] = 1;
-      }
+      categoryCount[category] = (categoryCount[category] || 0) + 1;
     });
   });
-
-  // Convert the counts into the desired array format
-  const result = Object.keys(categoryCount).map((category) => ({
+  return Object.keys(categoryCount).map((category) => ({
     category: category,
     value: categoryCount[category],
   }));
-
-  return result;
 }
 
 const PieChart = () => {
   const chartRef = useRef(null);
-  const [isLoading, setIsLoading] = useState(true); // Initially, we set loading to true
+  const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Convert mockData categories to format usable by the chart
+  // Fetch data from an API
   useEffect(() => {
-    // Simulate loading state change
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 500);
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:3001/ai-info"); // Adjust the URL to your API
+        const jsonData = await response.json();
+        setData(jsonData);
+        setIsLoading(false);
+      } catch (error) {
+        console.error("Failed to fetch data:", error);
+        setIsLoading(false); // Ensure loading is disabled in case of error
+      }
+    };
+    fetchData();
   }, []);
 
   // Initialize and update chart
   useLayoutEffect(() => {
     if (isLoading) return; // Do not initialize the chart if data is not yet available
-
-    const dataCategory = countCategories(mockData); // Using mockData directly
+    const dataCategory = countCategories(data);
 
     let root = am5.Root.new(chartRef.current);
     root.setThemes([am5themes_Animated.new(root)]);
@@ -80,11 +79,12 @@ const PieChart = () => {
       centerY: am5.percent(50),
       fontSize: 20,
       fill: am5.color(0xffffff),
-      opacity: 0.85,
+      opacity: 0.75,
     });
     series.ticks.template.setAll({
       stroke: am5.color(0xffffff), // Dark gray color
     });
+
     let legend = chart.children.push(
       am5.Legend.new(root, {
         centerX: am5.percent(50),
@@ -103,24 +103,24 @@ const PieChart = () => {
       fill: am5.color(0xffffff),
     });
 
-    // legend.valueLabels.template.set("forceHidden", true);
+    legend.itemContainers.template.events.on("hit", function(ev) {
+      onCategoryToggle(ev.target.dataItem.dataContext.category);
+    }, this);
+
 
     return () => {
       root.dispose();
     };
-  }, [isLoading]); // Dependency on isLoading ensures chart re-initialization when loading state updates
+  }, [isLoading, data]); // Dependency on isLoading and data ensures re-initialization when needed
 
   if (isLoading) {
     return <Loading />;
   }
 
   return (
-    <div
-      id="chartdiv"
-      ref={chartRef}
-      style={{ width: "100%", height: "500px" }}
-    ></div>
+    <div id="chartdiv" ref={chartRef} style={{ width: "100%", height: "500px" }}></div>
   );
 };
 
 export default PieChart;
+

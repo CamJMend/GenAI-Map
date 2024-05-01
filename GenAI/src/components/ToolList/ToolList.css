@@ -1,7 +1,5 @@
 .tool-list-container {
-    max-height: 600px; /* Maximum height */
-    overflow-y: auto; /* Enables vertical scrolling */
-    overflow-x: hidden; /* Prevents horizontal scrolling */
+    max-height: auto; /* Maximum height */
     padding: 20px;
   }
   
@@ -47,3 +45,32 @@
   .tool-list li a:hover {
     background-color: #004494;
   }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .pagination button {
+    border: 1px solid #ccc;
+    background-color: #f8f9fa;
+    color: #333;
+    text-align: center;
+    cursor: pointer;
+    padding: 8px 16px;
+    transition: background-color 0.3s, border-color 0.3s;
+    margin: 0 4px;
+  }
+  
+  .pagination button:hover {
+    background-color: #e9ecef;
+    border-color: #adb5bd;
+  }
+  
+  .pagination button.active {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+  }
+  

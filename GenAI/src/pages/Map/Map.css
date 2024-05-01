@@ -1,7 +1,5 @@
 .mapPage {
-    display: grid;
     background-color: #222529;
-    grid-template-columns: 2fr 1fr; /* Equal width columns */
     gap: 20px; /* Space between columns */
     padding: 20px; /* Padding around the grid */
   }
