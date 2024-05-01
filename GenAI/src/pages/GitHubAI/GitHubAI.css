@@ -1,0 +1,28 @@
+.github-ai {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.github-ai h1 {
+  text-align: center;
+  color: #333;
+}
+
+.git-cards {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(300px, 1fr)
+  ); /* Creates a responsive grid layout */
+  gap: 20px; /* Space between cards */
+  padding: 20px;
+}
+
+/* Optional: Additional responsive tweaks */
+@media (max-width: 768px) {
+  .git-cards {
+    grid-template-columns: 1fr; /* Single column on smaller screens */
+  }
+}

@@ -1,0 +1,28 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  list-style-type: none;
+}
+
+.page-item {
+  margin: 0 5px;
+}
+
+.page-link {
+  cursor: pointer;
+  padding: 8px 16px;
+  background-color: #071627;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none; /* Remove underline from links */
+}
+
+.page-link:hover {
+  background-color: #0056b3;
+}
+
+.page-item.current .page-link {
+  background-color: #2023b845; /* Highlight current page */
+  color: black;
+}

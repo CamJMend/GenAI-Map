@@ -8,7 +8,7 @@ export const FAQ = ({ faq, index }) => {
     <div key={index} className="FAQ-div">
       <div
         className="FAQ-title"
-        onClick={(e) => {
+        onClick={() => {
           setShowAnswer(!showAnswer);
         }}
       >

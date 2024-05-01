@@ -24,6 +24,8 @@ const Navbar = () => {
       setMenu("search");
     } else if (path.includes("/about")) {
       setMenu("about");
+    } else if (path.includes("/githubai")) {
+      setMenu("githubai");
     } else {
       setMenu("home"); // Default to home
     }
@@ -40,7 +42,7 @@ const Navbar = () => {
         />
       </div>
       <ul className={`nav-menu ${state.theme === "light" ? "white" : ""}`}>
-        {["home", "map", "search", "about"].map((item) => (
+        {["home", "map", "search", "githubai", "about"].map((item) => (
           <li key={item} onClick={() => setMenu(item)}>
             <Link
               to={`/${item === "home" ? "" : item}`}
