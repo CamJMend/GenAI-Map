@@ -106,9 +106,13 @@ const InfoAI = () => {
                 : "",
             }}
           />
-          <button onClick={toggleDescription}>
-            {showFullDescription ? "Show Less " : "Show More"}
-          </button>
+          {toolData.description ? (
+            <button onClick={toggleDescription}>
+              {showFullDescription ? "Show Less " : "Show More"}
+            </button>
+          ) : (
+            ""
+          )}
         </div>
         <button
           id="visit-button"
@@ -116,6 +120,27 @@ const InfoAI = () => {
         >
           Visit tool website
         </button>
+        <h2 className="rel-searches-h2">Search on the web:</h2>
+        <ul className="rel-searches-ul">
+          {toolData.searches.map((search, index) => (
+            <li key={search.id} className="rel-searches-li">
+              <i
+                className="fa-solid fa-magnifying-glass"
+                style={{ color: "black" }}
+              ></i>
+              <a
+                href={`https://www.google.com/search?q=${encodeURIComponent(
+                  search.query
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rel-searches-a"
+              >
+                {search.query}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
       <div className="image">
         <img src={toolImage} alt="Tool Representation" />

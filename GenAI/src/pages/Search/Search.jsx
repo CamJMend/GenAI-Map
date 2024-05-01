@@ -41,6 +41,7 @@ function Search() {
           placeholder="Search..."
           value={searchTerm}
           onChange={handleInputChange}
+          onKeyDown={(e) => e.key === "Enter" && handleSearch()}
         />
         <button className="search-button" onClick={handleSearch}>
           <i className="fa-solid fa-magnifying-glass"></i>
