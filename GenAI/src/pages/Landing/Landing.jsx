@@ -56,6 +56,11 @@ const Landing = () => {
                     style={{ width: "150px", height: "150px" }}
                     src={data[index] ? data[index].urlLogo : ""}
                     alt=""
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src =
+                        "https://img.freepik.com/foto-gratis/vista-robot-grafico-3d_23-2150849173.jpg";
+                    }}
                   />
                   {index++}
                 </Link>
@@ -88,6 +93,11 @@ const Landing = () => {
                     style={{ width: "150px", height: "150px" }}
                     src={data[index] ? data[index].urlLogo : ""}
                     alt=""
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src =
+                        "https://img.freepik.com/foto-gratis/vista-robot-grafico-3d_23-2150849173.jpg";
+                    }}
                   />
                   {index++}
                 </Link>
@@ -123,6 +133,11 @@ const Landing = () => {
                       style={{ width: "150px", height: "150px" }}
                       src={data[index] ? data[index].urlLogo : ""}
                       alt=""
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src =
+                          "https://img.freepik.com/foto-gratis/vista-robot-grafico-3d_23-2150849173.jpg";
+                      }}
                     />
                     {index++}
                   </Link>
@@ -134,6 +149,11 @@ const Landing = () => {
                       style={{ width: "150px", height: "150px" }}
                       src={data[index] ? data[index].urlLogo : ""}
                       alt=""
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src =
+                          "https://img.freepik.com/foto-gratis/vista-robot-grafico-3d_23-2150849173.jpg";
+                      }}
                     />
                     {index++}
                   </Link>
@@ -157,6 +177,11 @@ const Landing = () => {
                         style={{ width: "150px", height: "150px" }}
                         src={data[index] ? data[index].urlLogo : ""}
                         alt=""
+                        onError={(e) => {
+                          e.target.onerror = null;
+                          e.target.src =
+                            "https://img.freepik.com/foto-gratis/vista-robot-grafico-3d_23-2150849173.jpg";
+                        }}
                       />
                       {index++}
                     </Link>
@@ -177,6 +202,11 @@ const Landing = () => {
                         style={{ width: "150px", height: "150px" }}
                         src={data[index] ? data[index].urlLogo : ""}
                         alt=""
+                        onError={(e) => {
+                          e.target.onerror = null;
+                          e.target.src =
+                            "https://img.freepik.com/foto-gratis/vista-robot-grafico-3d_23-2150849173.jpg";
+                        }}
                       />
                       {index++}
                     </Link>
@@ -219,6 +249,11 @@ const Landing = () => {
                         style={{ width: "150px", height: "150px" }}
                         src={data[index] ? data[index].urlLogo : ""}
                         alt=""
+                        onError={(e) => {
+                          e.target.onerror = null;
+                          e.target.src =
+                            "https://img.freepik.com/foto-gratis/vista-robot-grafico-3d_23-2150849173.jpg";
+                        }}
                       />
                       {index++}
                     </Link>
@@ -230,6 +265,11 @@ const Landing = () => {
                         style={{ width: "150px", height: "150px" }}
                         src={data[index] ? data[index].urlLogo : ""}
                         alt=""
+                        onError={(e) => {
+                          e.target.onerror = null;
+                          e.target.src =
+                            "https://img.freepik.com/foto-gratis/vista-robot-grafico-3d_23-2150849173.jpg";
+                        }}
                       />
                       {index++}
                     </Link>
@@ -252,6 +292,11 @@ const Landing = () => {
                         style={{ width: "150px", height: "150px" }}
                         src={data[index] ? data[index].urlLogo : ""}
                         alt=""
+                        onError={(e) => {
+                          e.target.onerror = null;
+                          e.target.src =
+                            "https://img.freepik.com/foto-gratis/vista-robot-grafico-3d_23-2150849173.jpg";
+                        }}
                       />
                       {index++}
                     </Link>
