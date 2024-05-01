@@ -9,6 +9,13 @@
     background: white;
 }
 
+.sidebar p{
+    font-size: 20px;
+    font-weight: 500;
+    color: #333;
+
+}
+
 .sidebar-item{
     display: flex;
     align-items: center;

@@ -23,7 +23,6 @@ function App() {
             <Route path="/search" element={<Search />} />
             <Route path="/infoai/:id" element={<InfoAI />} />
             <Route path="/infoai" element={<InfoAI />} />
-            <Route path="/login" element={<Login />} />
             <Route path="/admin" element={<Admin />} />
           </Routes>
         </div>
