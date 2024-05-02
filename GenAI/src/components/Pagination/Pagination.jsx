@@ -23,7 +23,7 @@ const Pagination = ({ totalItems, itemsPerPage, currentPage, onPageChange }) => 
       <button onClick={goToPreviousPage} disabled={currentPage === 1}>
         Back
       </button>
-      <span>{currentPage} de {pageCount}</span>
+      <span>{currentPage} from {pageCount}</span>
       <button onClick={goToNextPage} disabled={currentPage === pageCount}>
         Next
       </button>
