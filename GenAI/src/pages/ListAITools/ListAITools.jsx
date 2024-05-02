@@ -1,75 +1,81 @@
-import React, { useState, useEffect } from 'react'
-import './ListAITools.css'
-import Sidebar from '../../components/Sidebar/Sidebar'
+import React, { useState, useEffect } from 'react';
+import './ListAITools.css';
+import Sidebar from '../../components/Sidebar/Sidebar';
 
 const ListAITools = () => {
-    const[allAITools, setAllAITools] = useState([]);
+    const [allAITools, setAllAITools] = useState([]);
+    const [filteredAITools, setFilteredAITools] = useState([]);
+    const [searchTerm, setSearchTerm] = useState('');
 
     const fetchAITools = async () => {
         const response = await fetch('http://localhost:3001/ai-info');
         const data = await response.json();
         setAllAITools(data);
-    }
+        setFilteredAITools(data);  // Set filtered list to all tools initially
+    };
 
     useEffect(() => {
         fetchAITools();
     }, []);
 
-    // const updateAITool = async (id) => {
-    //     const response = await fetch(`http://localhost:3001/ai-info/${id}`, {
-    //         method: 'PUT',
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify({
-    //             trending: false
-    //         })
-    //     });
-    //     if (response.ok) {
-    //         fetchAITools();
-    //     }
-    // }
+    useEffect(() => {
+        // Filter AI tools based on the search term
+        const results = allAITools.filter(tool =>
+            tool.name.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+        setFilteredAITools(results);
+    }, [searchTerm, allAITools]);
 
     const deleteAITool = async (id) => {
         const response = await fetch(`http://localhost:3001/ai-info/${id}`, {
             method: 'DELETE'
         });
         if (response.ok) {
-            fetchAITools();
+            fetchAITools(); // Refetch the list after deleting an item
         }
-    }
+    };
 
+    const handleSearchChange = (event) => {
+        setSearchTerm(event.target.value);
+    };
 
-
-  return (
-    <div className='list-aitools'>
-        <div className="main-content">
-            
+    return (
+        <div className='list-aitools'>
+            <Sidebar />
+            <div className="main-content">
+            <input
+                type="text"
+                placeholder="Search by name..."
+                value={searchTerm}
+                onChange={handleSearchChange}
+                className="search-input"
+            />
+            <div className="list-format-main">
+                <p>Logo</p>
+                <p>Name</p>
+                <p>Categories</p>
+                <p>Edit</p>
+                <p>Remove</p>
+            </div>
+            <div className="list-allaitools">
+                {filteredAITools.map((tool, index) => (
+                    <React.Fragment key={tool.id}>
+                        <div className="list-format list-format-main">
+                            <img src={tool.urlLogo} alt="Logo"/>
+                            <p>{tool.name}</p>
+                            <p>{tool.categories.join(', ')}</p>
+                            <button onClick={() => updateAITool(tool.id)}>Edit</button>
+                            <button onClick={() => deleteAITool(tool.id)}>Remove</button>
+                        </div>
+                        {/* Only render the <hr> if it's not the last item */}
+                        {index !== filteredAITools.length - 1 && <hr />}
+                    </React.Fragment>
+                ))}
+            </div>
+            </div>
         </div>
-        <Sidebar />
-        <h1>List of all AI Tools</h1>
-        <div className="list-format-main">
-            <p>Logo</p>
-            <p>Name</p>
-            <p>Categories</p>
-            <p>Edit</p>
-            <p>Remove</p>
-        </div>
-        <div className="list-allaitools">
-            <hr />
-            {allAITools.map((tool) => (
-                <div key={tool.id} className="list-format list-format-main">
-                    <img src={tool.urlLogo} alt="Logo"/>
-                    <p>{tool.name}</p>
-                    <p>{tool.categories.join(', ')}</p>
-                    <button onClick={() => updateAITool(tool.id)}>Edit</button>
-                    <button onClick={() => deleteAITool(tool.id)}>Remove</button>
-                </div>
-            ))}
-            <hr />
-        </div>
-    </div>
-  )
-}
+    );
+};
 
-export default ListAITools
+export default ListAITools;
+

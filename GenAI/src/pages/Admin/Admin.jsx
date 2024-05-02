@@ -33,14 +33,6 @@ function Admin() {
     <div className="admin">
       <h1>Welcome to the Admin Panel</h1>
       <Sidebar />
-      <Routes>
-        <Route path="/addaitool" element={<AddAITool />} />
-        <Route path="/aitoolslist" element={<AIToolsList />} />
-        <Route
-          path="/updateaitool/:aiTechnologyId"
-          element={<UpdateAITechnology />}
-        />
-      </Routes>
       <LogoutB />
       <Profile />
     </div>

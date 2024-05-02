@@ -6,8 +6,7 @@
 .footer {
   width: auto;
   background-color: #222529;
-
-  display: flex;
+  margin-top: auto;
   align-items: center;
   padding-top: 20px;
   padding-bottom: 20px;
