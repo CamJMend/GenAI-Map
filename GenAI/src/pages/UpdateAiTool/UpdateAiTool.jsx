@@ -120,21 +120,6 @@ const UpdateAITechnology = () => {
     }
   };
 
-  const test = (event) => {
-    event.preventDefault();
-    const payload = {
-      name,
-      referenceURL,
-      pricingModel,
-      licensingType,
-      description,
-      shortDescription,
-      urlLogo,
-      AITasks: aiTasks,
-      Categories: categories,
-    };
-    console.log(payload);
-  };
   return (
     <>
       <div className="sidebar-content" style={{ display: "flex" }}>
