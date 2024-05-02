@@ -32,10 +32,12 @@ function Admin() {
   }
   return (
     <div className="admin">
-      <h1>Welcome to the Admin Panel</h1>
+      <div className="title-button">
+        <h1>Welcome to the Admin Panel</h1>
+        <Profile />
+        <LogoutB />
+      </div>
       <Sidebar />
-      <LogoutB />
-      <Profile />
     </div>
   );
 }
