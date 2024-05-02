@@ -11,6 +11,7 @@ import GitHubAi from "./pages/GitHubAI/GitHubAI";
 import InfoGitHub from "./pages/InfoGitHub/InfoGitHub";
 import CreateAITechnology from "./pages/AddAiTool/AddAiTool";
 import ListAITools from "./pages/ListAITools/ListAITools";
+import UpdateAITechnology from "./pages/UpdateAiTool/UpdateAiTool";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -30,6 +31,10 @@ function App() {
             <Route path="/githubai" element={<GitHubAi />} />
             <Route path="/infogithub/:repo/:owner" element={<InfoGitHub />} />
             <Route path="/addaitool" element={<CreateAITechnology />} />
+            <Route
+              path="/updateaitool/:aiTechnologyId"
+              element={<UpdateAITechnology />}
+            />
             <Route path="/listaitools" element={<ListAITools />} />
           </Routes>
         </div>

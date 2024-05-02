@@ -1,0 +1,10 @@
+div .third {
+  display: inline !important;
+  width: fit-content;
+  background-color: red;
+}
+div .third:hover {
+  display: inline-block !important;
+
+  background-color: rgba(255, 0, 0, 0.664);
+}

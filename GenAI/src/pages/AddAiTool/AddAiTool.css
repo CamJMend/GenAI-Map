@@ -28,7 +28,6 @@
   border: 1px solid #ccc;
 }
 .form-group button {
-  background-color: #007bff;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -36,7 +35,7 @@
   font-size: 16px;
 }
 .form-group button:hover {
-  background-color: #0056b3;
+  background-color: #d8cb83;
 }
 .error {
   color: red;
