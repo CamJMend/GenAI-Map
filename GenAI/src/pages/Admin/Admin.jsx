@@ -2,9 +2,6 @@ import React from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 import "./Admin.css";
 import Sidebar from "../../components/Sidebar/Sidebar";
-import AddAITool from "../../components/AddAITool/AddAITool";
-import AIToolsList from "../../components/AIToolsList/AIToolsList";
-import UpdateAITool from "../../components/UpdateAITool/UpdateAITool";
 import { useAuth0 } from "@auth0/auth0-react";
 import LoginB from "../../components/LoginB/LoginB";
 import LogoutB from "../../components/LogoutB/LogoutB";
@@ -38,9 +35,7 @@ function Admin() {
       <h1>Welcome to the Admin Panel</h1>
       <Sidebar />
       <Routes>
-        <Route path="/addaitool" element={<AddAITool />} />
-        <Route path="/aitoolslist" element={<AIToolsList />} />
-        <Route path="/updateaitool" element={<UpdateAITool />} />
+    
       </Routes>
       <LogoutB />
       <Profile />

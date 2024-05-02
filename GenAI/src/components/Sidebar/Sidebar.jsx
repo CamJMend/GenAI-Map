@@ -20,12 +20,6 @@ const Sidebar = () => {
                     <p>List Database</p>
                 </div>
             </Link>
-            <Link to={'/updateaitool'} style={{textDecoration: 'none'}}>
-                <div className="sidebar-item">
-                    <img src={listproduct} alt="list product icon" style={{width: '30px', height: '30px'}}/>
-                    <p>List Database</p>
-                </div>
-            </Link>
         </div>
     )
 }
