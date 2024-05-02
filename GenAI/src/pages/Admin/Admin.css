@@ -3,24 +3,23 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;  /* This ensures the prompt takes full viewport height */
-    background-color: #f4f4f4;  /* A light grey background */
-    color: #333; /* Dark grey text for readability */
-    font-family: 'Arial', sans-serif; /* Simple and clean font */
+    height: 100vh; 
+    background-color: #f4f4f4; 
+    color: #333;
+    font-family: 'Arial', sans-serif;
 }
 
 .admin-login-prompt h1 {
     margin-top: 20px;
     font-size: 24px;
-    color: #5a5a5a; /* Slightly darker text for the heading */
+    color: #5a5a5a; 
 }
 
-/* Styling for the Login button, assuming it's within LoginB component */
 .LoginB-button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #007bff; /* Bootstrap blue */
-    color: white;
+    background-color: #007bff; 
+    color: #fafafa;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -28,7 +27,7 @@
 }
 
 .LoginB-button:hover {
-    background-color: #0056b3; /* Darken button on hover */
+    background-color: #0056b3; 
 }
 
 

@@ -11,6 +11,7 @@ function Admin() {
   const validEmails = [
     "santigugon@gmail.com",
     "sebastiancerveramaltos@gmail.com",
+    "cam.jmend@gmail.com"
   ];
   if (!isAuthenticated) {
     // Redirect user to login page or show a login button
