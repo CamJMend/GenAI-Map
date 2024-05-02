@@ -1,10 +1,9 @@
-import React from "react";
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./Admin.css";
 import Sidebar from "../../components/Sidebar/Sidebar";
-import AddAITool from "../../components/AddAITool/AddAITool";
+import AddAITool from "../AddAiTool/AddAiTool";
 import AIToolsList from "../../components/AIToolsList/AIToolsList";
-import UpdateAITool from "../../components/UpdateAITool/UpdateAITool";
+import UpdateAITechnology from "../UpdateAiTool/UpdateAiTool";
 import { useAuth0 } from "@auth0/auth0-react";
 import LoginB from "../../components/LoginB/LoginB";
 import LogoutB from "../../components/LogoutB/LogoutB";
@@ -40,7 +39,10 @@ function Admin() {
       <Routes>
         <Route path="/addaitool" element={<AddAITool />} />
         <Route path="/aitoolslist" element={<AIToolsList />} />
-        <Route path="/updateaitool" element={<UpdateAITool />} />
+        <Route
+          path="/updateaitool/:aiTechnologyId"
+          element={<UpdateAITechnology />}
+        />
       </Routes>
       <LogoutB />
       <Profile />
