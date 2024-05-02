@@ -65,6 +65,7 @@ const CreateAITechnology = () => {
     };
 
     try {
+
       const response = await fetch("http://localhost:3001/ai-info", {
         method: "POST",
         body: JSON.stringify(payload),
