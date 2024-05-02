@@ -7,33 +7,41 @@
   width: auto;
   background-color: #222529;
   margin-top: auto;
-  align-items: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 70px;
-  padding-right: 70px;
+  padding: 20px 70px 20px 70px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   color: #fafafa;
 }
 
+.about{
+  color:#fafafa;
+  margin: 0px;
+  margin-top: 25px;
+}
+
+.about img{
+  margin-bottom: 1.2em;
+  width: 180px;
+}
+
 .footer-content {
   display: flex;
-  align-items: center;
   justify-content: space-around;
   padding: 20px;
 }
 
 .footer-section {
   flex: 1;
-  padding: 10px;
+  padding: 20px;
   min-width: 150px;
+  margin-left: 10px;
 }
 
-.footer-section h2 {
-  color: #fff;
-  font-size: 1.5rem;
+.footer-section h2{
+  color: #fafafa;
+  font-size: 1.2rem;
   text-transform: uppercase;
-  margin-bottom: 15px;
+  margin-bottom: 1.2em;
+  font-weight: 600;
 }
 
 .footer-section ul li {
@@ -41,15 +49,56 @@
 }
 
 .footer-bottom {
-  background-color: #222;
-  color: #fff;
+  background-color: #222529;
+  color: #fafafa;
   width: 100%;
   padding: 8px;
   text-align: center;
 }
 
 .socials a {
-  color: #fff;
+  color: #fafafa;
   margin: 0 5px;
   font-size: 1.5rem;
+}
+
+.links ul{
+  padding-inline-start: 0px;
+}
+
+.links li{
+  list-style-type: none;
+}
+
+.contact{
+  display: flex;
+  flex-direction: column;
+}
+
+.contact span{
+  margin-bottom: 1em;
+}
+
+.white {
+  background-color: #fafafa;
+}
+
+.footer.white .links a, .footer.white .footer-section h2, .footer.white .about p, 
+.footer.white .contact span, .footer.white .contact i,
+.footer.white .socials a, .footer.white .socials i  {
+  color: #222529;
+}
+
+.footer.white .footer-bottom{
+  background-color: #fafafa;
+  color: #222529;
+}
+
+.footer-section.links a {
+  color: #fafafa;
+  text-decoration: none;
+}
+
+.footer-section.links a:hover {
+  text-decoration: underline;
 }

@@ -12,6 +12,7 @@ import InfoGitHub from "./pages/InfoGitHub/InfoGitHub";
 import CreateAITechnology from "./pages/AddAiTool/AddAiTool";
 import ListAITools from "./pages/ListAITools/ListAITools";
 import UpdateAITechnology from "./pages/UpdateAiTool/UpdateAiTool";
+import Licencias from './pages/Licencias/Licencias'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
             <Route path="/infoai/:id" element={<InfoAI />} />
             <Route path="/infoai" element={<InfoAI />} />
             <Route path="/admin" element={<Admin />} />
+            <Route path="/licencias" element={<Licencias />} />
             <Route path="/githubai" element={<GitHubAi />} />
             <Route path="/infogithub/:repo/:owner" element={<InfoGitHub />} />
             <Route path="/addaitool" element={<CreateAITechnology />} />
