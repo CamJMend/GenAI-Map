@@ -100,6 +100,15 @@ const InfoAI = () => {
             ))}
           </ul>
         </div>
+        {toolData.ranking && toolData.ranking > 0 ? (
+          <div className="ranking">
+            <h2>
+              {" "}
+              <strong style={{ fontWeight: "1000" }}>Ranking:</strong>
+              {toolData.ranking}
+            </h2>
+          </div>
+        ) : null}
         <div className="description">
           <p>{toolData.shortDescription}</p>
         </div>

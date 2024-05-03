@@ -198,3 +198,19 @@
   transition: 0.6s;
   display: none;
 }
+
+.ranking {
+  display: inline-block;
+  margin-top: 20px;
+  border: #222529 solid 1px;
+  padding: 5px 10px;
+  border-radius: 10%;
+}
+
+.ranking h2,
+.ranking h2 strong {
+  color: #222529;
+  font-size: 30px;
+  font-weight: 500;
+  font-style: italic;
+}
