@@ -26,6 +26,7 @@ const Dropdown = () => {
       try {
         const response = await fetch("http://localhost:3001/ai-task");
         const data = await response.json();
+        console.log(data);
         setTasks(data);
         setLoadingTasks(false);
       } catch (error) {
@@ -72,7 +73,7 @@ const Dropdown = () => {
           <option disabled value="">
             Categories
           </option>
-          <option value="all">All Categories</option>
+          <option value="">All Categories</option>
           {loadingCategories ? (
             <option>Loading categories...</option>
           ) : (
@@ -91,7 +92,7 @@ const Dropdown = () => {
           <option disabled value="">
             Tasks
           </option>
-          <option value="all">All Tasks</option>
+          <option value="">All Tasks</option>
           {loadingTasks ? (
             <option disabled>Loading tasks...</option>
           ) : (

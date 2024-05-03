@@ -31,7 +31,7 @@ const sortData = (data, sortBy) => {
   });
 };
 // eslint-disable-next-line react/prop-types
-const PruebaItems = ({ data }) => {
+const PruebaItems = ({ total, data }) => {
   const [filteredData, setFilteredData] = useState(data);
   const { state } = useContext(GlobalContext);
 
@@ -42,8 +42,7 @@ const PruebaItems = ({ data }) => {
   return (
     <>
       <h2>
-        <i className="fa-solid fa-magnifying-glass"></i> {filteredData.length}{" "}
-        Results found
+        <i className="fa-solid fa-magnifying-glass"></i> {total} Results found
       </h2>
       <div className="results-grid">
         {filteredData.map((item) => (
