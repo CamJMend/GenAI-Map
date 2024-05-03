@@ -231,3 +231,11 @@
   color: #222529;
   line-height: 1.5;
 }
+
+.img-link {
+  transition: 0.5s;
+}
+.img-link:hover {
+  transition: 0.5s;
+  transform: scale(0.95);
+}

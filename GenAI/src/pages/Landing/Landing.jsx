@@ -49,6 +49,7 @@ const Landing = () => {
                 }}
               >
                 <Link
+                  className="img-link"
                   style={{ textDecoration: "none" }}
                   to={`/infoai/${data[index] ? data[index].id : ""}`}
                 >
@@ -86,6 +87,7 @@ const Landing = () => {
                 }}
               >
                 <Link
+                  className="img-link"
                   style={{ textDecoration: "none" }}
                   to={`/infoai/${data[index] ? data[index].id : ""}`}
                 >
@@ -126,6 +128,7 @@ const Landing = () => {
                   }}
                 >
                   <Link
+                    className="img-link"
                     style={{ textDecoration: "none" }}
                     to={`/infoai/${data[index] ? data[index].id : ""}`}
                   >
@@ -142,6 +145,7 @@ const Landing = () => {
                     {index++}
                   </Link>
                   <Link
+                    className="img-link"
                     style={{ textDecoration: "none" }}
                     to={`/infoai/${data[index] ? data[index].id : ""}`}
                   >
@@ -170,6 +174,7 @@ const Landing = () => {
                   >
                     {" "}
                     <Link
+                      className="img-link"
                       style={{ textDecoration: "none", marginBottom: "80px" }}
                       to={`/infoai/${data[index] ? data[index].id : ""}`}
                     >
@@ -195,6 +200,7 @@ const Landing = () => {
                     }}
                   >
                     <Link
+                      className="img-link"
                       style={{ textDecoration: "none" }}
                       to={`/infoai/${data[index] ? data[index].id : ""}`}
                     >
@@ -242,6 +248,7 @@ const Landing = () => {
                     }}
                   >
                     <Link
+                      className="img-link"
                       style={{ textDecoration: "none" }}
                       to={`/infoai/${data[index] ? data[index].id : ""}`}
                     >
@@ -258,6 +265,7 @@ const Landing = () => {
                       {index++}
                     </Link>
                     <Link
+                      className="img-link"
                       style={{ textDecoration: "none" }}
                       to={`/infoai/${data[index] ? data[index].id : ""}`}
                     >
@@ -285,6 +293,7 @@ const Landing = () => {
                     }}
                   >
                     <Link
+                      className="img-link"
                       style={{ textDecoration: "none" }}
                       to={`/infoai/${data[index] ? data[index].id : ""}`}
                     >

@@ -34,7 +34,7 @@ const ListAITools = () => {
         method: "DELETE",
       });
       if (response.ok) {
-        fetchAITools(); // Refetch the list after deleting an item
+        window.location.reload();
       }
     }
   };
@@ -83,4 +83,3 @@ const ListAITools = () => {
 };
 
 export default ListAITools;
-
