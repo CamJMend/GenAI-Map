@@ -1,5 +1,35 @@
-.info-GitHub h1, .info-GitHub h2, .info-GitHub h3, .info-GitHub h4, .info-GitHub h5, .info-GitHub h6, .info-GitHub p, .info-GitHub a, .info-GitHub ul, .info-GitHub li, .info-GitHub span, .info-GitHub strong, .info-GitHub em, .info-GitHub code, .info-GitHub img, .info-GitHub blockquote, .info-GitHub hr, .info-GitHub table, .info-GitHub thead, .info-GitHub tbody, .info-GitHub tr, .info-GitHub th, .info-GitHub td , .info-GitHub div, .info-GitHub form, .info-GitHub input, .info-GitHub button, .info-GitHub textarea, .info-GitHub select, .info-GitHub option, .info-GitHub label{
-  font-family: 'Roboto', sans-serif;
+.info-GitHub h1,
+.info-GitHub h2,
+.info-GitHub h3,
+.info-GitHub h4,
+.info-GitHub h5,
+.info-GitHub h6,
+.info-GitHub p,
+.info-GitHub a,
+.info-GitHub ul,
+.info-GitHub li,
+.info-GitHub span,
+.info-GitHub strong,
+.info-GitHub em,
+.info-GitHub code,
+.info-GitHub img,
+.info-GitHub blockquote,
+.info-GitHub hr,
+.info-GitHub table,
+.info-GitHub thead,
+.info-GitHub tbody,
+.info-GitHub tr,
+.info-GitHub th,
+.info-GitHub td,
+.info-GitHub div,
+.info-GitHub form,
+.info-GitHub input,
+.info-GitHub button,
+.info-GitHub textarea,
+.info-GitHub select,
+.info-GitHub option,
+.info-GitHub label {
+  font-family: "Roboto", sans-serif;
   font-weight: 900;
   color: #222529;
 }

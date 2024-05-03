@@ -46,6 +46,7 @@ const LicensesAndSources = () => {
                   href={license.source}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="source-link"
                 >
                   Visit
                 </a>
