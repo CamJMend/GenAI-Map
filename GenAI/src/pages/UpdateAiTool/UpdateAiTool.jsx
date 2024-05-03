@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import "./UpdateAiTool.css";
+import UpdateRanking from "../../components/updateRanking/UpdateRanking";
 
 const UpdateAITechnology = () => {
   const { aiTechnologyId } = useParams();
@@ -20,6 +21,8 @@ const UpdateAITechnology = () => {
   const [currentCategory, setCurrentCategory] = useState("");
   const [currentTask, setCurrentTask] = useState("");
   const [categoriesLoaded, setCategoriesLoaded] = useState(false);
+
+  const [rankingS, setRanking] = useState(0);
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -55,6 +58,7 @@ const UpdateAITechnology = () => {
       setUrlLogo(data.urlLogo);
       setAiTasks(data.tasks);
       setCategories(data.categories);
+      setRanking(data.ranking);
       categoriesLoaded ? setLoading(false) : setCategoriesLoaded(true);
     };
     fetchDetails();
@@ -253,6 +257,7 @@ const UpdateAITechnology = () => {
           </div>
         )}
       </div>
+      <UpdateRanking aiTechnologyId={aiTechnologyId} rankingS={rankingS} />
     </>
   );
 };
