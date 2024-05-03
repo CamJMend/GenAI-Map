@@ -28,11 +28,14 @@ const ListAITools = () => {
   }, [searchTerm, allAITools]);
 
   const deleteAITool = async (id) => {
-    const response = await fetch(`http://localhost:3001/ai-info/${id}`, {
-      method: "DELETE",
-    });
-    if (response.ok) {
-      fetchAITools(); // Refetch the list after deleting an item
+    // Confirm deletion with the user
+    if (window.confirm("Are you sure you want to delete this AI Tool?")) {
+      const response = await fetch(`http://localhost:3001/ai-info/${id}`, {
+        method: "DELETE",
+      });
+      if (response.ok) {
+        fetchAITools(); // Refetch the list after deleting an item
+      }
     }
   };
 
@@ -70,7 +73,6 @@ const ListAITools = () => {
                 </button>
                 <button onClick={() => deleteAITool(tool.id)}>Remove</button>
               </div>
-              {/* Only render the <hr> if it's not the last item */}
               {index !== filteredAITools.length - 1 && <hr />}
             </React.Fragment>
           ))}
@@ -81,3 +83,4 @@ const ListAITools = () => {
 };
 
 export default ListAITools;
+
