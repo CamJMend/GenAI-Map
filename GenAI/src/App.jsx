@@ -14,6 +14,7 @@ import ListAITools from "./pages/ListAITools/ListAITools";
 import UpdateAITechnology from "./pages/UpdateAiTool/UpdateAiTool";
 import Licencias from "./pages/Licencias/Licencias";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Sources from "./pages/Sources/Sources";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
               element={<UpdateAITechnology />}
             />
             <Route path="/listaitools" element={<ListAITools />} />
+            <Route path="/sources" element={<Sources />} />
           </Routes>
         </div>
         <Footer />

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { marked } from "marked";
 import DOMPurify from "dompurify";
+import "./InfoGitHub.css";
 
 const InfoGitHub = () => {
   const { repo, owner } = useParams();
@@ -42,7 +43,10 @@ const InfoGitHub = () => {
       {loading && <p>Loading README...</p>}
       {error && <p style={{ color: "red" }}>Error: {error}</p>}
       {!loading && !error && (
-        <div dangerouslySetInnerHTML={{ __html: readme }} />
+        <div
+          className="info-GitHub"
+          dangerouslySetInnerHTML={{ __html: readme }}
+        />
       )}
     </div>
   );

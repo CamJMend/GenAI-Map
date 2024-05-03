@@ -1,0 +1,33 @@
+.sources {
+  background-color: #fff; /* White background for the container */
+  border: 1px solid #ccc; /* Light grey border */
+  padding: 20px; /* Padding around the content */
+  margin: 20px; /* Margin around the container */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.sources h1 {
+  color: #333; /* Dark grey color for the header */
+  font-family: "Arial", sans-serif; /* Font styling for the header */
+}
+
+.sources ul {
+  list-style-type: none; /* No bullets for the list */
+  padding: 0; /* No padding for the list */
+  margin: 0; /* No margin for the list */
+}
+
+.sources li {
+  margin-bottom: 10px; /* Space between list items */
+}
+
+.sources a {
+  color: #0077cc; /* Stylish blue color for links */
+  text-decoration: none; /* No underline for links */
+  font-family: "Arial", sans-serif; /* Consistent font for the links */
+}
+
+.sources a:hover {
+  text-decoration: underline; /* Underline on hover for better user interaction */
+}

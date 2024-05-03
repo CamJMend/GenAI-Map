@@ -42,6 +42,9 @@ const Footer = () => {
             <li>
               <Link to="/licencias">Licensing</Link>
             </li>
+            <li>
+              <Link to="/sources">Sources</Link>
+            </li>
           </ul>
         </div>
         <div className="footer-section contact-form">
@@ -78,5 +81,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-

@@ -1,31 +1,31 @@
-import React from 'react';
-import './Licencias.css'; // Asegúrate de crear este archivo CSS para estilizar el componente
+import React from "react";
+import "./Licencias.css"; // Asegúrate de crear este archivo CSS para estilizar el componente
 
 const LicensesAndSources = () => {
   const licenses = [
     {
-      name: 'React',
-      version: '17.0.2',
-      licenseType: 'MIT',
-      source: 'https://reactjs.org/'
+      name: "React",
+      version: "17.0.2",
+      licenseType: "MIT",
+      source: "https://reactjs.org/",
     },
     {
-      name: 'Axios',
-      version: '0.21.1',
-      licenseType: 'MIT',
-      source: 'https://github.com/axios/axios'
+      name: "Axios",
+      version: "0.21.1",
+      licenseType: "MIT",
+      source: "https://github.com/axios/axios",
     },
     {
-      name: 'AmCharts',
-      version: '4.10.0',
-      licenseType: 'Commercial',
-      source: 'https://www.amcharts.com/'
+      name: "AmCharts",
+      version: "4.10.0",
+      licenseType: "Commercial",
+      source: "https://www.amcharts.com/",
     },
   ];
 
   return (
     <div className="licenses-container">
-      <h1>Licenses and Sources</h1>
+      <h1>Licenses </h1>
       <table>
         <thead>
           <tr>
@@ -42,7 +42,11 @@ const LicensesAndSources = () => {
               <td>{license.version}</td>
               <td>{license.licenseType}</td>
               <td>
-                <a href={license.source} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={license.source}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Visit
                 </a>
               </td>
@@ -55,4 +59,3 @@ const LicensesAndSources = () => {
 };
 
 export default LicensesAndSources;
-
